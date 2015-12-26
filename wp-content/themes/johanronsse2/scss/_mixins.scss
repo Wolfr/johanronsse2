@@ -1,0 +1,64 @@
+/* ==========================================================================
+  Mixins
+   ========================================================================== */
+
+/* Fonts for headings
+   ========================================================================== */
+
+@mixin font-heading {
+  font-family: -apple-system, "Atlas Grotesk", "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+/* Fonts for reading
+   ========================================================================== */
+
+@mixin font-reading {
+  font-family: -apple-system, "Atlas Grotesk", "Roboto", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+@mixin font-reading-bold {
+  font-family: -apple-system, "Atlas Grotesk", "Roboto", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+@mixin font-reading-italic {
+  font-family: -apple-system, "Atlas Grotesk", "Roboto", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* Utilities
+   ========================================================================== */
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Links
+   ========================================================================== */
+
+@mixin swap-underlines {
+  a:link,
+  a:visited {
+    border: none;
+  }
+
+  a:active,
+  a:focus,
+  a:hover {
+    color: mix($accent-color,#000,80%);
+    border-bottom: 1px solid mix($accent-color,#000,80%);
+  }
+  
+}

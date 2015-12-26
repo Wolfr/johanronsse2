@@ -1,0 +1,48 @@
+
+/* Year 
+   ========================================================================== */
+
+.year {
+  dt,
+  dd {
+    margin: 0;
+    padding: 0;
+  }
+  dl, h3 {
+    margin: 0 0 0.5em;
+  }
+}
+
+.year dd {
+  padding-bottom: 1.2em;
+  &:last-child {
+    padding: 0;
+  }
+}
+  
+.year {
+  margin: 0 0 1em;
+  &:only-child {
+    margin: 0;
+  }
+  @media (min-width: $break-medium) {
+    margin: 0 0 2em;
+    @include clearfix;
+  }
+  h3 {
+    color: $muted-color;
+    font-size: 1em;
+  }
+}
+
+@media (min-width: $break-medium) {
+  .year h3 {
+    float: left;
+    width: 20%;
+  }
+
+  .year dl {
+    float: right;
+    width: 80%;
+  }
+}

@@ -1,0 +1,42 @@
+/* Bordered list - vertical (links only)
+   ========================================================================== */
+
+.bordered-list {
+  list-style: none;
+  padding: 0;
+  li {
+    a,
+    > span {
+      border-bottom: 1px solid $border-color;
+      padding: 0.5em 1em;
+      display: block;
+      > span {
+        color: #999;
+      }
+    }
+    a {
+      text-decoration: none;
+      &:hover {
+        background: #EEE;
+      }
+      > span {
+        color: #999;
+      }
+    }
+    &:last-child a {
+      border: none;
+    }
+  }
+}
+
+.bordered-list-alt {
+  li {
+    a {
+      background: #EEE;
+      padding: 1em;
+      &:hover {
+        background: #DDD;
+      }
+    }
+  }
+}

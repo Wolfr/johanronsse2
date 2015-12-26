@@ -1,0 +1,26 @@
+/* Bordered list - vertical (links only)
+   ========================================================================== */
+
+.bordered-list-horizontal {
+  list-style: none;
+  padding: 0;
+  @include clearfix;
+  li {
+    float: left;
+    border-right: 1px solid $border-color;
+    &:last-child {
+      border: none;
+    }
+    a, span {
+      padding: 0.5em 1em;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      border: none;
+      &:hover {
+        background: #EEE;
+      }
+    }
+  }
+}

@@ -26,7 +26,7 @@
     @include clearfix;
     border-bottom: 2px solid #000;
   }
-  @media (min-width: $break-medium) {
+  @media (min-width: $break-nav) {
     #branding {
       float: left;
     }
@@ -45,18 +45,45 @@
   }
 }
 
+
+/* Sections
+   ========================================================================== */
+
 .section {
+  // Vertical spacing
   padding: 0.5em 0;
   margin: 0.5em 0;
   .inner {
     max-width: 840px;
     margin: 0 auto;
-    padding-left: $el-side-padding-lg;
-    padding-right: $el-side-padding-lg;
-    @media (min-width: $break-medium) {
-      padding-left: 2*$el-side-padding-lg;
-      padding-right: 2*$el-side-padding-lg;
+  }
+}
+
+.content-inner {
+  header,
+  article p,
+  article ul,
+  article h2,
+  article h3,
+  article h4,
+  article ol,
+  article dl,
+  article figcaption,
+  .box,
+  #respond,
+  .month,
+   {
+    max-width: 95%;
+    @media (min-width: 720px) {
+      max-width: 660px;
     }
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  header p,
+  header h2 {
+    max-width: 100%;
   }
 }
 
@@ -68,8 +95,12 @@
   list-style: none;
   margin: 0;
   padding: 0 0 2em;
-  @media (min-width: $break-medium) {
+  @media (max-width: $break-nav - 1) {
+    margin-left: 0.5em;
+  }
+  @media (min-width: $break-nav) {
     padding: 2em 0 0;
+    margin-right: 0.5em;
   }
 }
 
@@ -88,11 +119,16 @@
   border: none;
 }
 
-#nav li.current-menu-item {
-  a {
-    color: #000;
-    background: #FFF;
-    text-decoration: none;
+#nav {
+  .current-menu-item,
+  .current-page-ancestor,
+  .current_page_parent {
+    a {
+      color: #000;
+      background: #FFF;
+      text-decoration: none;
+      border-bottom: 2px solid #DDD;
+    }
   }
 }
 
@@ -160,7 +196,6 @@ input[type="submit"] {
   border-radius: 4px;
   padding: 8px;
   @include font-reading;
-  box-shadow: inset 0 2px 2px rgba(0,0,0,0.1);
 }
 
 textarea,
@@ -173,11 +208,10 @@ input[type="password"] {
 
 label {
   display: block;
-  font-weight: 700;
   color: #000;
 }
 
-.form-submit #submit {
+input[type="submit"] {
   background: #000;
   color: #FFF;
   border: none;
@@ -185,11 +219,133 @@ label {
   padding: 8px 10px;
 }
 
-/* Post navigation 
+input#searchsubmit {
+  margin-top: 0.5em;
+}
+
+/* Post navigation
    ========================================================================== */
 
 #nav-below {
   margin-top: 2em;
-  padding-top: 1.5em;
+  padding: 1.5em 0.5em;
   border-top: 1px solid #DDD;
+  overflow: hidden;
+}
+
+.nav-previous a,
+.nav-next a {
+  @media (max-width: $break-medium - 1) {
+    background: #EEE;
+    padding: 5px;
+    display: inline-block;
+    border: none !important;
+  }
+}
+
+.nav-previous {
+  @media (min-width: $break-medium) {
+    float: left;
+    width: 48%;
+  }
+}
+
+.nav-next {
+  margin-top: 1em;
+  @media (min-width: $break-medium) {
+    margin-top: 0;
+    float: right;
+    width: 48%;
+  }
+}
+
+
+/* Fix a/img problem 
+   ========================================================================== */
+
+a img {
+  vertical-align: top;
+}
+
+/* Wrapper for responsive embeds (like YouTube)
+   ========================================================================== */
+
+.video-wrapper-limit-global-width {
+  max-width: 36em;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 43%;
+  height: 0;
+  margin-bottom: 1.2em;
+  &.aspect-2-3 {
+    padding-bottom: 66.67%; /* 3:2 */
+  }
+  &.aspect-16-9 {
+    padding-bottom: 56.25%; /* 16:9 */
+  }
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Image styling 
+   ========================================================================== */
+
+img.has-shadow {
+  box-shadow: 1px 1px 0 3px rgba(0,0,0,0.1);
+}
+
+figure img,
+figcaption {
+  display: block;
+}
+
+article img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+article img.avatar {
+  display: block;
+  margin: 0 0 1em;
+  max-width: 140px;
+}
+
+/* Comments 
+   ========================================================================== */
+
+#comments-list > ul {
+  list-style: none;
+  padding: 0.5em 0.5em 0.5em 3em;
+  > li > ul.children {
+    margin: 1em 0;
+    list-style: none;
+    padding-left: 3em;
+  }
+}
+
+.comment-author {
+  margin-left: -3em;
+  img {
+    width: 2.5em;
+    height: 2.5em;
+    margin-right: 1em;
+    margin-top: 0.25em;
+    float: left;
+    display: block;
+  }
+}
+
+.commentmetadata a {
+  color: #999;
+  border: none;
+  text-decoration: none;
 }

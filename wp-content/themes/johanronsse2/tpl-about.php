@@ -1,3 +1,9 @@
+<?php
+/**
+ * Template Name: about
+ */
+?>
+
 <?php get_header(); ?>
 
 <section class="section" role="main">
@@ -11,7 +17,6 @@
                         <?php } else { ?>
                             <header class="header">
                                 <h1 class="entry-title"><?php the_title(); ?></h1> 
-                                <p><?php the_time( get_option( 'date_format' ) ); ?></p>
                             </header>
                         <?php } ?>
                         <section class="entry-content">

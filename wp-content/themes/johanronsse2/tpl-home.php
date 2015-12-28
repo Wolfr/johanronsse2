@@ -9,7 +9,7 @@
 <section class="section" role="main">
     <div class="inner">
 
-        <p>Latest projects:</p>
+        <p class="bordered-list-title">Latest projects:</p>
 
         <ul class="bordered-list bordered-list-alt">
             <li>
@@ -32,18 +32,19 @@
             </li>
         </ul>
 
-        <p>Latest research:</p>
+        <p class="bordered-list-title">Latest research:</p>
 
         <ul class="bordered-list bordered-list-alt">
-          <li>
-            <a href="/research/windows-10">Windows 10</a>
-          </li>
-          <li>
-            <a href="/research/apple-watch">Apple Watch</a>
-          </li>
+            <li>
+                <a href="/research/windows-10">Windows 10</a>
+            </li>
+            <li>
+                <a href="/research/apple-watch">Apple Watch</a>
+            </li>
         </ul>
-        
-        <p>Latest blog posts:</p>
+
+        <p class="bordered-list-title">Latest blog posts:</p>
+
         <ul class="bordered-list bordered-list-alt">
         <?php
             $recent_posts = wp_get_recent_posts(3);

@@ -54,7 +54,7 @@
   padding: 0.5em 0;
   margin: 0.5em 0;
   .inner {
-    max-width: 840px;
+    max-width: 50em;
     margin: 0 auto;
   }
 }
@@ -69,13 +69,15 @@
   article ol,
   article dl,
   article figcaption,
+  article pre,
   .box,
   #respond,
   .month,
    {
     max-width: 95%;
     @media (min-width: $break-medium) {
-      max-width: 620px;
+      max-width: 600px;
+      max-width: 60rem;
     }
     margin-left: auto;
     margin-right: auto;
@@ -88,6 +90,8 @@
 
   .reset-max-width {
     max-width: 100%;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
     @media (max-width: $break-medium - 1) {
       max-width: 95%;
     }
@@ -101,29 +105,58 @@
   overflow: hidden;
   list-style: none;
   margin: 0;
-  padding: 0 0 2em;
+  padding: 0 0 1em;
+  font-size: 0.8em;
   @media (max-width: $break-nav - 1) {
-    margin-left: 0.5em;
+    margin: 0 0.5em;
+  }
+  @media (min-width: $break-small-medium) {
+    font-size: 0.9em;
   }
   @media (min-width: $break-nav) {
-    padding: 2em 0 0;
+    padding: 1.25em 0 0;
+    font-size: 1em;
     margin-right: 0.5em;
+  }
+  @media (min-width: $break-medium) {
+    padding: 2em 0 0;
+  }
+  .flexbox & {
+    // If flexbox is supported
+    display: -webkit-flex;
+    display: flex;
   }
 }
 
 #nav li {
-  float: left;
   margin-right: 0.5em;
+  float: left;
+  .flexbox & {
+    float: none;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
   &:last-child {
     margin: 0;
   }
 }
 
 #nav a {
-  padding: 0.5em;
+  padding: 0.7em 0.5em;
+  @media (min-width: $break-nav) {
+    padding: 0.5em 1em;
+  }
   background: #EEE;
-  display: inline-block;
-  border: none;
+  display: block;
+  color: #333;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  &:hover {
+    text-decoration: none;
+    background: #AAA;
+    color: #FFF;
+    border-bottom: 2px solid #999;
+  }
 }
 
 #nav {
@@ -135,6 +168,7 @@
       background: #FFF;
       text-decoration: none;
       border-bottom: 2px solid #DDD;
+      cursor: default;
     }
   }
 }
@@ -143,14 +177,17 @@
    ========================================================================== */
 
 #branding {
-  margin: 0.5em 0;
+  margin: 0 0 0.3em;
+  @media (min-width: $break-medium) {
+    margin: 0.5em 0;
+  }
 }
 
 #branding a {
   display: block;
   border: none;
   color: #000;
-  padding: 0.5em;
+  padding: 0.66em 0.75em 0.44em 0.75em;
   transition: background 0.18s ease-in-out;
   &:hover,
   &:active,
@@ -160,9 +197,10 @@
 }
 
 #branding p {
-  margin: 0 0 0.3em;
-  font-size: 0.9em;
+  margin: 0 0 0.1em 0.4em;
+  font-size: 0.78em;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 #branding h1 {
@@ -201,7 +239,7 @@ textarea,
 input[type="text"],
 input[type="submit"] {
   border-radius: 4px;
-  padding: 8px;
+  padding: 0.4em;
   @include font-reading;
 }
 
@@ -223,7 +261,7 @@ input[type="submit"] {
   color: #FFF;
   border: none;
   display: inline-block;
-  padding: 8px 10px;
+  padding: 0.4em 0.5em;
 }
 
 input#searchsubmit {

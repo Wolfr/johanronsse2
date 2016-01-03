@@ -8,8 +8,11 @@
     margin: 0;
     padding: 0;
   }
-  dl, h3 {
+  h3 {
     margin: 0 0 0.5em;
+  }
+  dl {
+    margin: 0 0 1em;
   }
 }
 
@@ -21,28 +24,27 @@
 }
   
 .year {
-  margin: 0 0 1em;
-  &:only-child {
-    margin: 0;
-  }
-  @media (min-width: $break-medium) {
-    margin: 0 0 2em;
-    @include clearfix;
-  }
+  
   h3 {
     color: $muted-color;
     font-size: 1em;
   }
 }
 
-@media (min-width: $break-medium) {
-  .year h3 {
-    float: left;
-    width: 20%;
-  }
+.year {
+  
+  @media (min-width: $break-medium) {
+    @include clearfix;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    h3 {
+      float: left;
+      width: 20%;
+    }
 
-  .year dl {
-    float: right;
-    width: 80%;
+     dl {
+      float: right;
+      width: 80%;
+    }
   }
 }

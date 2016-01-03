@@ -2,12 +2,7 @@
    ========================================================================== */
 
 .bordered-list-title {
-  margin: 0 1em 0.5em;
-  padding: 0;
-}
-
-h2.align-with-bordered-list {
-  margin: 0 0.5em 0.5em;
+  margin: 0 0.75em 0.5em 0.75em;
   padding: 0;
 }
 
@@ -19,7 +14,7 @@ h2.align-with-bordered-list {
     a,
     > span {
       border-bottom: 1px solid $border-color;
-      padding: 0.5em 1em;
+      padding: 0.5em 0.75em;
       display: block;
       > span {
         color: #999;
@@ -29,6 +24,7 @@ h2.align-with-bordered-list {
       text-decoration: none;
       &:hover {
         background: #EEE;
+        transition: background 0.11s ease-in-out;
       }
       > span {
         color: #999;

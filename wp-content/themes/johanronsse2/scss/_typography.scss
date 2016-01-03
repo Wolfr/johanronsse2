@@ -27,7 +27,13 @@ html {
 
 @media (min-width: $break-huge) {
   html {
-    font-size: 18/15*62.5%;
+    font-size: 19/15*62.5%;
+  }
+}
+
+@media (min-width: $break-x-huge) {
+  html {
+    font-size: 21/15*62.5%;
   }
 }
 

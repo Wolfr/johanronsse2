@@ -121,7 +121,7 @@
   @media (min-width: $break-medium) {
     padding: 2em 0 0;
   }
-  .flexbox & {
+  .supports-flex & {
     // If flexbox is supported
     display: -webkit-flex;
     display: flex;
@@ -131,7 +131,7 @@
 #nav li {
   margin-right: 0.5em;
   float: left;
-  .flexbox & {
+  .supports-flex & {
     float: none;
     -webkit-flex: 1 1 auto;
     flex: 1 1 auto;
@@ -197,7 +197,7 @@
 }
 
 #branding p {
-  margin: 0 0 0.1em 0.4em;
+  margin: 0 0 0.1em 0.64em;
   font-size: 0.78em;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -393,4 +393,14 @@ article img.avatar {
   color: #999;
   border: none;
   text-decoration: none;
+}
+
+/* Code 
+   ========================================================================== */
+
+pre {
+  background: #EEE;
+  border-left: 10px solid #DDD;
+  padding: 1em;
+  font-size: 0.85em;
 }

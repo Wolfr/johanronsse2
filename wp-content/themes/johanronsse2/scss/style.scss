@@ -224,7 +224,7 @@
 .article-list .article-list-item {
   border-bottom: 1px solid #DDD;
   margin: 0 0 2em;
-  padding: 0 0 2em;
+  padding: 0;
   &:last-child {
     border: none;
     padding: 0;
@@ -403,4 +403,19 @@ pre {
   border-left: 10px solid #DDD;
   padding: 1em;
   font-size: 0.85em;
+}
+
+/* Alignment fix
+   ========================================================================== */
+
+h2.align-with-bordered-list {
+  padding-left: 0.4em;
+}
+
+.entry-content {
+  margin-bottom: 2em;
+}
+
+#comments {
+  margin-top: 2em;
 }

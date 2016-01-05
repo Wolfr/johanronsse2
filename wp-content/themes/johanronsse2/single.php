@@ -8,7 +8,9 @@
             <div class="row">
                 <div class="col-md-10 col-md-push-1">
                     <div class="content-inner">
+
                         <?php get_template_part( 'entry' ); ?>
+
                         <footer>
                             <div class="footer-inner">
                                 <div class="box">

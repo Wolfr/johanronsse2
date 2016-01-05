@@ -20,8 +20,7 @@
             ?>
         <p><?php the_time( get_option( 'date_format' ) ); ?></p>
     </header>
-    <section>
+    <section class="entry-content">
         <?php get_template_part( 'entry', ( is_archive() || is_search() ? 'summary' : 'content' ) ); ?>
-        <!-- <?php edit_post_link(); ?> -->
     </section>
 </article>

@@ -364,12 +364,21 @@ article img.avatar {
   max-width: 140px;
 }
 
-/* Comments 
+/* Comments
    ========================================================================== */
+
+#comments {
+  margin: 2em auto 0;
+  max-width: 95%;
+  @media (min-width: $break-medium) {
+    max-width: 600px;
+    max-width: 60rem;
+  }
+}
 
 #comments-list > ul {
   list-style: none;
-  padding: 0.5em 0.5em 0.5em 3em;
+  padding: 0 0 0 3em;
   > li > ul.children {
     margin: 1em 0;
     list-style: none;
@@ -414,8 +423,4 @@ h2.align-with-bordered-list {
 
 .entry-content {
   margin-bottom: 2em;
-}
-
-#comments {
-  margin-top: 2em;
 }

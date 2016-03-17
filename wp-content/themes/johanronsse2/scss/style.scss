@@ -296,6 +296,7 @@ input#searchsubmit {
 }
 
 .nav-next {
+  text-align: right;
   margin-top: 1em;
   @media (min-width: $break-medium) {
     margin-top: 0;
@@ -378,7 +379,7 @@ article img.avatar {
 
 #comments-list > ul {
   list-style: none;
-  padding: 0 0 0 3em;
+  padding: 0;
   > li > ul.children {
     margin: 1em 0;
     list-style: none;
@@ -386,16 +387,43 @@ article img.avatar {
   }
 }
 
-.comment-author {
-  margin-left: -3em;
+.comment-header {
+  @include clearfix;
+}
+
+.comment-header-info {
+  float: left;
+}
+
+.comment-header-avatar {
   img {
-    width: 2.5em;
-    height: 2.5em;
-    margin-right: 1em;
-    margin-top: 0.25em;
-    float: left;
+    width: 2.6em;
+    height: 2.6em;
+    margin-top: 0.2em;
     display: block;
   }
+  margin-right: 0.75em;
+  float: left;
+}
+
+.comment-author {
+  cite {
+    font-style: normal;
+  }
+  a {
+    color: $standard-color;
+    border-color: lighten($standard-color, 50%);
+    &:hover {
+      color: mix($accent-color,#000,80%);
+      border-bottom: 1px solid mix($accent-color,#000,80%);
+    }
+  }
+}
+
+.comment {
+  border-bottom: 1px solid #DDD;
+  margin: 0 0 1em;
+  padding: 0 0 0.5em;
 }
 
 .commentmetadata a {

@@ -11,6 +11,18 @@
         <h2 class="align-with-bordered-list">Research</h2>
         <ul class="bordered-list">
             <li>
+                <span>
+                    VR<br>
+                    <span>Last update: No updates yet</span>
+                </span>
+            </li>
+            <li>
+                <a href="/research/ipad-pro">
+                    iPad Pro<br>
+                    <span>Last update: June 22, 2016</span>
+                </a>
+            </li>
+            <li>
                 <a href="/research/windows-10">
                     Windows 10<br>
                     <span>Last update: November 20, 2015</span>

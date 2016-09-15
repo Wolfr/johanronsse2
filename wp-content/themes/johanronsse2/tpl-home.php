@@ -19,15 +19,9 @@
                 </a>
             </li>
             <li>
-                <a href="http://bedrock.mono.company">
-                    Bedrock<br>
-                    <span>Static site generator to make epic HTML prototypes</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://kanamaster.com">
-                    Kana Master<br>
-                    <span>iPhone application to learn the Japanese hiragana and katakana character sets</span>
+                <a href="https://github.com/mono-company/keynote-extractor-app/">
+                    Keynote Extractor<br>
+                    <span>A tool to create better HTML exports out of Keynote</span>
                 </a>
             </li>
         </ul>
@@ -35,6 +29,9 @@
         <p class="bordered-list-title">Latest research:</p>
 
         <ul class="bordered-list bordered-list-alt">
+            <li>
+                <a href="/research/ipad-pro">iPad Pro</a>
+            </li>
             <li>
                 <a href="/research/windows-10">Windows 10</a>
             </li>

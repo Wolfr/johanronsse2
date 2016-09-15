@@ -6,6 +6,13 @@
   padding: 0.75em;
   margin: 0 0 0.5em;
   overflow: hidden;
+  .twitter {
+    width: 1em;
+    top: 0.15em;
+    position: relative;
+    margin-left: 0.3em;
+    opacity: 0.5;
+  }
   h3 {
     margin: 0;
     padding-bottom: 0.5em;
@@ -28,7 +35,7 @@
       }
     }
   }
-  img {
+  .avatar {
     float: left;
     margin-right: 1em;
     margin-bottom: 1em;

@@ -15,12 +15,16 @@
                             <div class="footer-inner">
                                 <div class="box">
                                     <ul>
-                                        <li>Link to this article: <a href="<?php the_permalink(); ?>"><?php the_permalink(); ?></a></li>
-                                        <li>Have something to say? Tweet me <a href="https://twitter.com/johan_ronsse">@johan_ronsse</a> or e-mail me: <a href="mailto:blogreply@johanronsse.be">blogreply@johanronsse.be</a>.</li>
+                                        <li>
+                                            <img src="<?php bloginfo('template_directory') ?>/images/twitter.svg" class="twitter">
+                                            
+                                            Like this article? <a href="https://twitter.com/intent/tweet?url=<?php $url = get_permalink(); echo urlencode($url); ?>&text=<?php the_title() ?>&via=johanronsse">Tweet about it</a>.
+
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="box">
-                                    <img src="<?php bloginfo('template_directory') ?>/images/avatar.png" alt="Johan Ronsse">
+                                    <img src="<?php bloginfo('template_directory') ?>/images/avatar.png" alt="Johan Ronsse" class="avatar">
                                     <h3>About Johan</h3>
                                     <p>User interface designer specialised in designing usable software. Co-founder of <a href="http://mono.company">Mono</a>.</p>
                                 </div>

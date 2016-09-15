@@ -1,5 +1,4 @@
 // Library vars and mixins
-@import "compass";
 @import "variables";
 @import "mixins";
 @import "scaffolding";
@@ -325,6 +324,9 @@ a img {
   padding-bottom: 43%;
   height: 0;
   margin-bottom: 1.2em;
+  &.aspect-3-4 {
+    padding-bottom: 75%; /* 3:2 */
+  }
   &.aspect-2-3 {
     padding-bottom: 66.67%; /* 3:2 */
   }

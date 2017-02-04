@@ -19,12 +19,6 @@
                 </a>
             </li>
             <li>
-                <a href="http://driekeer.be">
-                    Drie keer<br>
-                    <span>A personal music blog (in Dutch)</span>
-                </a>
-            </li>
-            <li>
                 <a href="https://keynote-extractor.com/">
                     Keynote Extractor<br>
                     <span>A tool to create better HTML exports out of Keynote</span>

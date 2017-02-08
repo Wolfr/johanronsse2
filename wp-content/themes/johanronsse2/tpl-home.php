@@ -30,13 +30,13 @@
 
         <ul class="bordered-list bordered-list-alt">
             <li>
+                <a href="/research/vr">VR</a>
+            </li>
+            <li>
                 <a href="/research/ipad-pro">iPad Pro</a>
             </li>
             <li>
                 <a href="/research/windows-10">Windows 10</a>
-            </li>
-            <li>
-                <a href="/research/apple-watch">Apple Watch</a>
             </li>
         </ul>
 

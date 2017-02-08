@@ -11,10 +11,10 @@
         <h2 class="align-with-bordered-list">Research</h2>
         <ul class="bordered-list">
             <li>
-                <span>
+                <a href="/research/vr">
                     VR<br>
-                    <span>Last update: No updates yet</span>
-                </span>
+                    <span>Last update: February 8, 2017</span>
+                </a>
             </li>
             <li>
                 <a href="/research/ipad-pro">

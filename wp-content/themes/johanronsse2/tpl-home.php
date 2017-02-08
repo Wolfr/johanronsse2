@@ -44,7 +44,17 @@
 
         <ul class="bordered-list bordered-list-alt">
         <?php
-            $args = array( 'numberposts' => '3', 'post_status' => 'publish' );
+            $args = array (
+                'post_status' => 'publish',
+                'posts_per_page' => 3,
+                'tax_query' => array(
+                    array(
+                        'taxonomy'  => 'category',
+                        'field'     => 'slug',
+                        'terms'     => 'uncategorized',
+                        'operator'  => 'NOT IN'
+                    )
+                ));
             $recent_posts = wp_get_recent_posts($args);
             foreach( $recent_posts as $recent ){
                 echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';

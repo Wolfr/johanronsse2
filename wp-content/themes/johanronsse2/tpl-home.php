@@ -9,34 +9,20 @@
 <section class="section" role="main">
     <div class="inner">
 
-        <p class="bordered-list-title">Latest projects:</p>
+        <p class="bordered-list-title">Recent projects:</p>
 
         <ul class="bordered-list bordered-list-alt">
             <li>
-                <a href="http://mono.company">
+                <a href="https://mono.company">
                     Mono Company<br>
                     <span>User interface design consultancy based in Belgium</span>
                 </a>
             </li>
             <li>
-                <a href="https://keynote-extractor.com/">
-                    Keynote Extractor<br>
-                    <span>A tool to create better HTML exports out of Keynote</span>
+                <a href="http://bestof2017.johanronsse.be">
+                    Best of 2017<br>
+                    <span>A side project showcasing the best of 2017 in movies, music and more.</span>
                 </a>
-            </li>
-        </ul>
-
-        <p class="bordered-list-title">Latest research:</p>
-
-        <ul class="bordered-list bordered-list-alt">
-            <li>
-                <a href="/research/vr">VR</a>
-            </li>
-            <li>
-                <a href="/research/ipad-pro">iPad Pro</a>
-            </li>
-            <li>
-                <a href="/research/windows-10">Windows 10</a>
             </li>
         </ul>
 

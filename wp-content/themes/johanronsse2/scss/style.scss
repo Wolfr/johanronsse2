@@ -1,99 +1,452 @@
-// Library vars and mixins
-@import "variables";
-@import "mixins";
-@import "scaffolding";
-@import "typography";
+@import "normalize";
 
-/**
- * Import patterns
- */
+/* Variables
+   ========================================================================== */
 
-@import "patterns/links";
-@import "patterns/article";
-@import "patterns/bordered-list";
-@import "patterns/bordered-list-horizontal";
-@import "patterns/box";
-@import "patterns/columns";
-@import "patterns/links";
-@import "patterns/projects-list";
+// Colors
+
+$standard-color:       #494B53;
+$accent-color:         #4776E6;
+$muted-color:          #999;
+
+// Colors with semantic names
+$border-color:         #DEDEDE;
+
+// Breakpoints
+
+// Semantic
+$break-nav:            620/16*1rem;
+
+// By size
+$break-small-medium:   480/16*1rem;
+$break-medium:         768/16*1rem;
+$break-large:          1000/16*1rem;
+$break-huge:           1260/16*1rem;
+$break-x-huge:         1600/16*1rem;
+
+
+/* ==========================================================================
+  Mixins
+   ========================================================================== */
+
+/* Fonts for headings
+   ========================================================================== */
+
+@mixin font-heading {
+  font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* Fonts for reading
+   ========================================================================== */
+
+@mixin font-reading {
+  font-family: Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+@mixin font-reading-bold {
+  font-family: Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+@mixin font-reading-italic {
+  font-family: Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* Links
+   ========================================================================== */
+
+@mixin clearfix {
+  *zoom : 1;
+
+  &:before,
+  &:after {
+    display: table;
+    content : "";
+  }
+
+  &:after {
+    clear : both;
+  }
+}
+
+/* Fix a/img problem
+   ========================================================================== */
+
+a img {
+  vertical-align: top;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* Accessibility
+   ========================================================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Good defaults
+   ========================================================================== */
+
+img, video {
+  max-width: 100%;
+}
+
+/* Basic typo
+   ========================================================================== */
+
+html {
+  font-size: 62.5%;
+  @media (min-width: $break-small-medium) {
+    font-size: 15/15*62.5%;
+  }
+  @media (min-width: $break-medium) {
+    font-size: 16/15*62.5%;
+  }
+  @media (min-width: $break-large) {
+    font-size: 17/15*62.5%;
+  }
+  @media (min-width: $break-huge) {
+    font-size: 19/15*62.5%;
+  }
+  @media (min-width: $break-x-huge) {
+    font-size: 21/15*62.5%;
+  }
+}
+
+body {
+  background: #FFF;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  -webkit-overflow-scrolling: touch;
+
+  color: $standard-color;
+  @include font-reading;
+
+  max-width: 74rem;
+  padding: 1rem;
+  margin: 0 auto;
+
+}
+
+*[lang="jp"] {
+  font-family: sans-serif;
+}
+
+h1, h2, h3, h4 {
+  color: #000;
+}
+
+h1, h2, h3 {
+  @include font-heading;
+}
+
+h1 {
+  line-height: 1.1;
+  font-size: 2.4rem;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  line-height: 1.3;
+  font-size: 2.2rem;
+  margin: 0 0 1rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin: 1em 0 0.5rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin: 1em 0 0.5rem;
+}
+
+p {
+  margin: 0.75rem 0;
+}
+
+blockquote {
+  border-left: .5rem solid #DDD;
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
+
+strong {
+  color: #000;
+}
+
+/* Links
+   ========================================================================== */
+
+a {
+  text-decoration: none;
+  transition: all .22s ease-out;
+  transition-property: color, border;
+}
+
+a:link {
+  color: $accent-color;
+  border-bottom: 1px solid mix($accent-color,#FFF,35%);
+}
+
+a:visited {
+  color: mix($accent-color,#F00,65%);
+  border-bottom: 1px solid mix(mix($accent-color,#F00,65%),#FFF,35%);
+}
+
+a:active,
+a:focus,
+a:hover {
+  color: mix($accent-color,#000,80%);
+  border-bottom: 1px solid mix($accent-color,#000,80%);
+}
+
+
+
+/* Bordered list - vertical (links only)
+   ========================================================================== */
+
+.bordered-list-title {
+  margin: 2rem;
+  padding: 0;
+}
+
+.bordered-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 2rem;
+  li {
+    a,
+    > span {
+      border-bottom: 1px solid $border-color;
+      padding: 0.5rem 0.75rem;
+      display: block;
+      > span {
+        color: #999;
+      }
+    }
+    a {
+      text-decoration: none;
+      &:hover {
+        background: #EEE;
+        transition: background 0.11s ease-in-out;
+      }
+      > span {
+        color: #999;
+      }
+    }
+    &:last-child a {
+      border: none;
+    }
+  }
+}
+
+.bordered-list-alt {
+  li {
+    a {
+      background: #EEE;
+      padding: 2rem;
+      &:hover {
+        background: #DDD;
+      }
+    }
+  }
+}
+
+/* Bordered list - vertical (links only)
+   ========================================================================== */
+
+.bordered-list-horizontal {
+  list-style: none;
+  padding: 0;
+  @include clearfix;
+  li {
+    float: left;
+    border-right: 1px solid $border-color;
+    &:last-child {
+      border: none;
+    }
+    a, span {
+      padding: 0.5rem 1rem;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      border: none;
+      &:hover {
+        background: #EEE;
+      }
+    }
+  }
+}
+
+/* Box 
+   ========================================================================== */
+
+.box {
+  background: #EEE;
+  padding: 0.75rem;
+  margin: 0 0 0.5rem;
+  overflow: hidden;
+  .twitter {
+    width: 1.6rem;
+    top: 0.15rem;
+    position: relative;
+    margin-left: 0.3rem;
+    opacity: 0.5;
+  }
+  h3 {
+    margin: 0;
+    padding-bottom: 0.5rem;
+  }
+  p {
+    margin: 0 0 0.5rem;
+  }
+  ul {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      border-top: 1px solid #DDD;
+      padding: 0.5rem 0 0;
+      margin: 0.5rem 0 0;
+      &:first-child {
+        padding: 0;
+        margin: 0;
+        border: none;
+      }
+    }
+  }
+  .avatar {
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    max-width: 5.5rem;
+  }
+}
+
+/* Columns
+   ========================================================================== */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+$col-max: 100%;
+$col-count: 12;
+
+@media (min-width: $break-medium) {
+  
+  .row {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    @include clearfix;
+  }
+
+  .col-md-left {
+    float: left;
+  }
+
+  .col-md-right {
+    float: right;
+  }
+
+  .col-md, .container {
+    padding: 0 1rem;
+  }
+
+  .col-md-1 { width: $col-max/$col-count*1; }
+  .col-md-2 { width: $col-max/$col-count*2; }
+  .col-md-3 { width: $col-max/$col-count*3; }
+  .col-md-4 { width: $col-max/$col-count*4; }
+  .col-md-5 { width: $col-max/$col-count*5; }
+  .col-md-6 { width: $col-max/$col-count*6; }
+  .col-md-7 { width: $col-max/$col-count*7; }
+  .col-md-8 { width: $col-max/$col-count*8; }
+  .col-md-9 { width: $col-max/$col-count*9; }
+  .col-md-10 { width: $col-max/$col-count*10; }
+  .col-md-11 { width: $col-max/$col-count*11; }
+  .col-md-12 { width: $col-max/$col-count*12; }
+
+  .col-md-push-1 { margin-left: $col-max/$col-count*1; }
+
+}
+
+/* Year 
+   ========================================================================== */
+
+.year {
+  dt,
+  dd {
+    margin: 0;
+    padding: 0;
+  }
+  h3 {
+    margin: 0 0 0.5rem;
+  }
+  dl {
+    margin: 0 0 1rem;
+  }
+}
+
+.year dd {
+  padding-bottom: 1.2rem;
+  &:last-child {
+    padding: 0;
+  }
+}
+  
+.type-page {
+  padding: 5rem 1rem;
+}
+
+.year {
+  h3 {
+    color: $muted-color;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+}
+
+.year {
+  @include clearfix;
+  h3 {
+    float: left;
+    width: 20%;
+  }
+   dl {
+    float: right;
+    width: 80%;
+  }
+}
+
 
 /* Main layout
    ========================================================================== */
 
 #header {
+  margin: 4rem 0;
   .inner {
-    @include clearfix;
-    border-bottom: 2px solid #000;
-  }
-  @media (min-width: $break-nav) {
-    #branding {
-      float: left;
-    }
-    #nav {
-      float: right;
-    }
-  }
-}
-
-#footer {
-  .inner {
-    border-top: 1px solid #999;
-  }
-  p {
-    font-size: 1em;
-  }
-}
-
-
-/* Sections
-   ========================================================================== */
-
-.section {
-  // Vertical spacing
-  padding: 0.5em 0;
-  margin: 0.5em 0;
-  .inner {
-    max-width: 50em;
-    margin: 0 auto;
-  }
-}
-
-.content-inner {
-  header,
-  article p,
-  article ul,
-  article h2,
-  article h3,
-  article h4,
-  article ol,
-  article dl,
-  article figcaption,
-  article pre,
-  .box,
-  #respond,
-  .month,
-   {
-    max-width: 95%;
-    @media (min-width: $break-medium) {
-      max-width: 600px;
-      max-width: 60rem;
-    }
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  header p,
-  header h2 {
-    max-width: 100%;
-  }
-
-  .reset-max-width {
-    max-width: 100%;
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
-    @media (max-width: $break-medium - 1) {
-      max-width: 95%;
-    }
+    justify-content: space-between;
+    display: flex;
   }
 }
 
@@ -104,57 +457,30 @@
   overflow: hidden;
   list-style: none;
   margin: 0;
-  padding: 0 0 1em;
-  font-size: 0.8em;
-  @media (max-width: $break-nav - 1) {
-    margin: 0 0.5em;
-  }
-  @media (min-width: $break-small-medium) {
-    font-size: 0.9em;
-  }
-  @media (min-width: $break-nav) {
-    padding: 1.25em 0 0;
-    font-size: 1em;
-    margin-right: 0.5em;
-  }
-  @media (min-width: $break-medium) {
-    padding: 2em 0 0;
-  }
-  .supports-flex & {
-    // If flexbox is supported
-    display: -webkit-flex;
-    display: flex;
-  }
+  padding: 0 0 1rem;
+  font-size: 0.8rem;
+  display: flex;
 }
 
 #nav li {
-  margin-right: 0.5em;
-  float: left;
-  .supports-flex & {
-    float: none;
-    -webkit-flex: 1 1 auto;
-    flex: 1 1 auto;
-  }
+  font-size: 1.4rem;
+  margin-right: 0.5rem;
+  flex: 1 1 auto;
   &:last-child {
     margin: 0;
   }
 }
 
 #nav a {
-  padding: 0.7em 0.5em;
-  @media (min-width: $break-nav) {
-    padding: 0.5em 1em;
-  }
+  padding: 1rem 2rem;
   background: #EEE;
+  text-decoration: none;
   display: block;
+  border: none;
   color: #333;
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
   &:hover {
-    text-decoration: none;
     background: #AAA;
     color: #FFF;
-    border-bottom: 2px solid #999;
   }
 }
 
@@ -163,11 +489,9 @@
   .current-page-ancestor,
   .current_page_parent {
     a {
+      // Selected state wordpress
       color: #000;
       background: #FFF;
-      text-decoration: none;
-      border-bottom: 2px solid #DDD;
-      cursor: default;
     }
   }
 }
@@ -175,18 +499,17 @@
 /* Branding
    ========================================================================== */
 
-#branding {
-  margin: 0 0 0.3em;
-  @media (min-width: $break-medium) {
-    margin: 0.5em 0;
+#branding h1 {
+  @media (max-width: $break-medium) {
+    font-size: 1.6rem;
   }
 }
 
 #branding a {
+  padding: 1rem;
   display: block;
   border: none;
   color: #000;
-  padding: 0.66em 0.75em 0.44em 0.75em;
   transition: background 0.18s ease-in-out;
   &:hover,
   &:active,
@@ -195,34 +518,12 @@
   }
 }
 
-#branding p {
-  margin: 0 0 0.1em 0.64em;
-  font-size: 0.78em;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-#branding h1 {
-  margin: 0;
-}
-
-/* Spacing utitlities 
-   ========================================================================== */
-
-@media (max-width: $break-medium - 1) {
-
-  .space-top-sm {
-    margin-top: 2em;
-  }
-
-}
-
 /* Article list 
    ========================================================================== */
 
 .article-list .article-list-item {
-  border-bottom: 1px solid #DDD;
-  margin: 0 0 2em;
+  border-bottom: .1rem solid #DDD;
+  margin: 5rem 0;
   padding: 0;
   &:last-child {
     border: none;
@@ -237,8 +538,8 @@
 textarea,
 input[type="text"],
 input[type="submit"] {
-  border-radius: 4px;
-  padding: 0.4em;
+  border-radius: .4rem;
+  padding: 0.4rem;
   @include font-reading;
 }
 
@@ -260,20 +561,20 @@ input[type="submit"] {
   color: #FFF;
   border: none;
   display: inline-block;
-  padding: 0.4em 0.5em;
+  padding: 0.4em 0.5rem;
 }
 
 input#searchsubmit {
-  margin-top: 0.5em;
+  margin-top: 0.5rem;
 }
 
 /* Post navigation
    ========================================================================== */
 
 #nav-below {
-  margin-top: 2em;
-  padding: 1.5em 0.5em;
-  border-top: 1px solid #DDD;
+  margin-top: 2rem;
+  padding: 1.5em 0.5rem;
+  border-top: .1rem solid #DDD;
   overflow: hidden;
 }
 
@@ -281,7 +582,7 @@ input#searchsubmit {
 .nav-next a {
   @media (max-width: $break-medium - 1) {
     background: #EEE;
-    padding: 5px;
+    padding: .5rem;
     display: inline-block;
     border: none !important;
   }
@@ -296,7 +597,7 @@ input#searchsubmit {
 
 .nav-next {
   text-align: right;
-  margin-top: 1em;
+  margin-top: 1rem;
   @media (min-width: $break-medium) {
     margin-top: 0;
     float: right;
@@ -304,26 +605,18 @@ input#searchsubmit {
   }
 }
 
-
-/* Fix a/img problem 
-   ========================================================================== */
-
-a img {
-  vertical-align: top;
-}
-
 /* Wrapper for responsive embeds (like YouTube)
    ========================================================================== */
 
 .video-wrapper-limit-global-width {
-  max-width: 36em;
+  max-width: 36rem;
 }
 
 .video-wrapper {
   position: relative;
   padding-bottom: 43%;
   height: 0;
-  margin-bottom: 1.2em;
+  margin-bottom: 1.2rem;
   &.aspect-3-4 {
     padding-bottom: 75%; /* 3:2 */
   }
@@ -363,18 +656,17 @@ article img {
 
 article img.avatar {
   display: block;
-  margin: 0 0 1em;
-  max-width: 140px;
+  margin: 0 0 1rem;
+  max-width: 14rem;
 }
 
 /* Comments
    ========================================================================== */
 
 #comments {
-  margin: 2em auto 0;
+  margin: 2rem auto 0;
   max-width: 95%;
   @media (min-width: $break-medium) {
-    max-width: 600px;
     max-width: 60rem;
   }
 }
@@ -383,9 +675,9 @@ article img.avatar {
   list-style: none;
   padding: 0;
   > li > ul.children {
-    margin: 1em 0;
+    margin: 1rem 0;
     list-style: none;
-    padding-left: 3em;
+    padding-left: 3rem;
   }
 }
 
@@ -399,12 +691,12 @@ article img.avatar {
 
 .comment-header-avatar {
   img {
-    width: 2.6em;
-    height: 2.6em;
-    margin-top: 0.2em;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-top: 0.2rem;
     display: block;
   }
-  margin-right: 0.75em;
+  margin-right: 0.75rem;
   float: left;
 }
 
@@ -423,9 +715,9 @@ article img.avatar {
 }
 
 .comment {
-  border-bottom: 1px solid #DDD;
-  margin: 0 0 1em;
-  padding: 0 0 0.5em;
+  border-bottom: 0.1rem solid #DDD;
+  margin: 0 0 1rem;
+  padding: 0 0 0.5rem;
 }
 
 .commentmetadata a {
@@ -439,18 +731,97 @@ article img.avatar {
 
 pre {
   background: #EEE;
-  border-left: 10px solid #DDD;
-  padding: 1em;
-  font-size: 0.85em;
+  border-left: 1rem solid #DDD;
+  padding: 1rem;
+  font-size: 1.4rem;
 }
 
 /* Alignment fix
    ========================================================================== */
 
 h2.align-with-bordered-list {
-  padding-left: 0.4em;
+  padding-left: 0.4rem;
 }
 
 .entry-content {
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
+}
+
+/* Tables 
+   ========================================================================== */
+
+.table {
+  border-collapse: collapse;
+  td, th {
+    padding: 1rem;
+    border: 0.1rem solid #DDD;
+  }
+  th {
+    text-align: left;
+  }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #DDD;
+  margin: 1rem 0;
+}
+
+/* Figures and captions
+   ========================================================================== */
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  color: #999;
+}
+
+.wp-caption {
+  background: #F0F0F0;
+  padding: 1rem;
+  margin: 0 auto;
+  width: 100% !important;
+  text-align: center;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.wp-caption-text {
+  text-style: italic;
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* Belief 
+   ========================================================================== */
+
+.belief {
+  margin: 8rem 0;
+  font-size: 2.1rem;
+  padding: 0 1rem;
+}
+
+.featured-content {
+  margin: 8rem 0;
+}
+
+/* Article styling
+   ========================================================================== */
+
+article header p {
+  opacity: 0.5; //@todo tie this to a more specific instance i.e. blog post
+}
+
+article header {
+  margin-bottom: 2rem; //@todo tie this to a more specific instance i.e. blog post
+}
+
+h2.reset-max-width {
+  margin: 0 0 4rem; // @todo refactor to decent class
 }

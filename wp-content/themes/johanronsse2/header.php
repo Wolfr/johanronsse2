@@ -13,7 +13,6 @@
         <div class="inner">
             <div id="branding">
                 <a href="/">
-                    <p>From the desk of</p>
                     <h1>Johan Ronsse</h1>
                 </a>
             </div>

@@ -816,6 +816,8 @@ figcaption {
 
 article header p {
   opacity: 0.5; //@todo tie this to a more specific instance i.e. blog post
+  margin: 0;
+  margin-top: 0.8rem;
 }
 
 article header h1,
@@ -832,7 +834,7 @@ h2.reset-max-width {
 }
 
 pre {
-  font-size: 90%;
+  font-size: 82%;
   white-space: pre-wrap;       /* css-3 */
   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
   white-space: -pre-wrap;      /* Opera 4-6 */

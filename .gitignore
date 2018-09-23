@@ -47,6 +47,7 @@
 !.htaccess
 !favicon.ico
 !apple-touch-icon-precomposed.png
+!variable-fonts
 
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.

@@ -9,7 +9,7 @@
                 <div class="col-md-10 col-md-push-1">
                     <div class="content-inner">
 
-                        <?php get_template_part( 'entry' ); ?>
+                        <?php get_template_part('entry'); ?>
 
                         <footer>
                             <div class="footer-inner">
@@ -17,9 +17,7 @@
                                     <ul>
                                         <li>
                                             <img src="<?php bloginfo('template_directory') ?>/images/twitter.svg" class="twitter">
-                                            
                                             Like this article? <a href="https://twitter.com/intent/tweet?url=<?php $url = get_permalink(); echo urlencode($url); ?>&text=<?php the_title() ?>&via=johanronsse">Tweet about it</a>.
-
                                         </li>
                                     </ul>
                                 </div>
@@ -38,8 +36,6 @@
             </div>
 
         <?php endwhile; endif; ?>
-
-
 
         <?php get_template_part( 'nav', 'below-single' ); ?>
 

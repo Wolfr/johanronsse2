@@ -496,6 +496,7 @@ $col-count: 12;
    ========================================================================== */
 
 #branding h1 {
+  margin: 0;
   @media (max-width: $break-medium) {
     font-size: 1.6rem;
   }
@@ -535,7 +536,7 @@ textarea,
 input[type="text"],
 input[type="submit"] {
   border-radius: .4rem;
-  padding: 0.4rem;
+  padding: 0.8rem;
   @include font-reading;
 }
 
@@ -550,6 +551,7 @@ input[type="password"] {
 label {
   display: block;
   color: #000;
+  font-weight: 500;
 }
 
 input[type="submit"] {
@@ -557,7 +559,7 @@ input[type="submit"] {
   color: #FFF;
   border: none;
   display: inline-block;
-  padding: 0.4em 0.5rem;
+  padding: 0.4em 1.2rem;
 }
 
 input#searchsubmit {
@@ -811,9 +813,9 @@ figcaption {
    ========================================================================== */
 
 article header p {
-  opacity: 0.5; //@todo tie this to a more specific instance i.e. blog post
   margin: 0;
   margin-top: 0.8rem;
+  color: #999;
 }
 
 article header h1,

@@ -18,7 +18,7 @@
                     echo '</a></h2>';
                 }
             ?>
-        <p><?php the_time( get_option( 'date_format' ) ); ?></p>
+        <p><?php the_time( get_option( 'date_format' ) ); ?> - Posted in <?php the_category(' '); ?></p>
     </header>
     <section class="entry-content">
         <?php get_template_part( 'entry', ( is_archive() || is_search() ? 'summary' : 'content' ) ); ?>

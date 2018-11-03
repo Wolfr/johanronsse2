@@ -1,4 +1,4 @@
-<nav id="nav-below" class="navigation" role="navigation">
+<nav id="nav-below" class="navigation">
     <div class="nav-previous">
         <?php previous_post_link( '%link', '<span class="meta-nav">&larr;</span> %title' ); ?>
     </div>

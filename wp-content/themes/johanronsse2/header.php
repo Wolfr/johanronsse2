@@ -16,7 +16,7 @@
                     <h1>Johan Ronsse</h1>
                 </a>
             </div>
-            <nav id="nav" role="navigation">
+            <nav id="nav">
                 <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
             </nav>
         </div>

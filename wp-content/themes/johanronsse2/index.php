@@ -1,23 +1,19 @@
 <?php get_header(); ?>
 
-<section class="section" role="main">
+<main class="section">
     <div class="inner">
 
-        <div class="article-list">
+        <ul class="article-list">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                <div class="article-list-item">
-                    <div class="col-md-10 col-md-push-1">
-                        <div class="content-inner">
-                            <?php get_template_part( 'entry' ); ?>
-                        </div>
-                    </div>
-                </div>
+                <li class="article-list-item">
+                    <?php get_template_part( 'entry' ); ?>
+                </li>
             <?php endwhile; endif; ?>
-        </div>
+        </ul>
 
         <?php get_template_part( 'nav', 'below' ); ?>
 
     </div>
-</section>
+</main>
 
 <?php get_footer(); ?>

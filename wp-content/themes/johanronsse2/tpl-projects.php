@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-<section class="section" role="main">
+<main class="section">
     <div class="inner">
 
         <div class="content-inner">
@@ -27,6 +27,6 @@
         </div>
 
     </div>
-</section>
+</main>
 
 <?php get_footer(); ?>

@@ -518,10 +518,20 @@ $col-count: 12;
 /* Article list
    ========================================================================== */
 
+.article-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+article.type-post {
+  padding: 1rem;
+}
+
 .article-list .article-list-item {
   border-bottom: .1rem solid #DDD;
-  margin: 5rem 0;
-  padding: 0;
+  margin: 2.5rem 0;
+  padding: 2.5rem 0;
   &:last-child {
     border: none;
     padding: 0;

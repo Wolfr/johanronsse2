@@ -6,11 +6,11 @@
 // Colors
 
 $standard-color:       #494B53;
-$accent-color:         #4776E6;
-$muted-color:          #999;
+$accent-color:         #2B5CD1;
+$muted-color:          #6A6C72;
 
 // Colors with semantic names
-$border-color:         #DEDEDE;
+$border-color:         #C1C3C7;
 
 // Breakpoints
 
@@ -24,6 +24,12 @@ $break-large:          1000/16*1rem;
 $break-huge:           1260/16*1rem;
 $break-x-huge:         1600/16*1rem;
 
+/* Base
+   ========================================================================== */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 /* ==========================================================================
   Mixins
@@ -50,7 +56,7 @@ $break-x-huge:         1600/16*1rem;
 @mixin font-reading-bold {
   font-family: Helvetica, Arial, sans-serif;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 @mixin font-reading-italic {
@@ -144,7 +150,8 @@ body {
   margin: 0 auto;
 }
 
-*[lang="jp"] {
+*[lang="jp"],
+*[lang="ja-JP"] {
   font-family: sans-serif;
 }
 
@@ -237,7 +244,7 @@ a:hover {
       padding: 0.5rem 0.75rem;
       display: block;
       > span {
-        color: #999;
+        color: $muted-color;
       }
     }
     a {
@@ -247,7 +254,7 @@ a:hover {
         transition: background 0.11s ease-in-out;
       }
       > span {
-        color: #999;
+        color: $muted-color;
       }
     }
     &:last-child a {
@@ -310,9 +317,10 @@ a:hover {
     margin-left: 0.3rem;
     opacity: 0.5;
   }
-  h3 {
+  h2 {
     margin: 0;
     padding-bottom: 0.5rem;
+    font-size: 1.8rem;
   }
   p {
     margin: 0 0 0.5rem;
@@ -342,10 +350,6 @@ a:hover {
 
 /* Columns
    ========================================================================== */
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
 
 $col-max: 100%;
 $col-count: 12;
@@ -729,7 +733,7 @@ article img.avatar {
 }
 
 .commentmetadata a {
-  color: #999;
+  color: #6C6C6C;
   border: none;
   text-decoration: none;
 }
@@ -783,7 +787,7 @@ figure {
 }
 
 figcaption {
-  color: #999;
+  color: #6C6C6C;
 }
 
 .wp-caption {
@@ -825,7 +829,7 @@ figcaption {
 article header p {
   margin: 0;
   margin-top: 0.8rem;
-  color: #999;
+  color: #6C6C6C;
 }
 
 article header h1,

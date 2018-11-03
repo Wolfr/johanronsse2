@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-<main class="section" role="main">
+<main class="section">
 
     <div class="belief">
         <p>Hi, I'm Johan!</p>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/style.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/style.css?v=1.1">
     <script src="<?php bloginfo('template_directory') ?>/js/scripts.js"></script>
     <?php wp_head(); ?>
 </head>

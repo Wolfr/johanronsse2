@@ -1,4 +1,5 @@
 @import "normalize";
+@import "prism";
 
 /* Variables
    ========================================================================== */
@@ -750,16 +751,9 @@ article img {
 /* Code
    ========================================================================== */
 
-pre {
-  background: #EEE;
-  border-left: 0.5rem solid #DDD;
-  padding: 1rem;
-  font-size: 80%;
-  white-space: pre-wrap;       /* css-3 */
-  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-  white-space: -pre-wrap;      /* Opera 4-6 */
-  white-space: -o-pre-wrap;    /* Opera 7 */
-  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+
+code[class*="language-"], pre[class*="language-"] {
+  font-size: 1.3rem;
 }
 
 code {

@@ -752,9 +752,21 @@ article img {
 
 pre {
   background: #EEE;
-  border-left: 1rem solid #DDD;
+  border-left: 0.5rem solid #DDD;
   padding: 1rem;
-  font-size: 1.4rem;
+  font-size: 80%;
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+code {
+  font-size: 80%;
+  padding: 0.2rem;
+  color: #CE2F55;
+  background: #EEE;
 }
 
 /* Alignment fix
@@ -855,13 +867,4 @@ article header {
 
 h2.reset-max-width {
   margin: 0 0 4rem; // @todo refactor to decent class
-}
-
-pre {
-  font-size: 82%;
-  white-space: pre-wrap;       /* css-3 */
-  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-  white-space: -pre-wrap;      /* Opera 4-6 */
-  white-space: -o-pre-wrap;    /* Opera 7 */
-  word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }

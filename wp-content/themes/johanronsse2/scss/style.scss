@@ -509,13 +509,14 @@ $col-count: 12;
    ========================================================================== */
 
 #branding h1 {
-  margin: 0;
   @media (max-width: $break-medium) {
     font-size: 1.6rem;
+    margin: 0.3rem 0 0;
   }
 }
 
 #branding a {
+  margin: -0.6rem 0 0;
   padding: 1rem;
   display: block;
   border: none;

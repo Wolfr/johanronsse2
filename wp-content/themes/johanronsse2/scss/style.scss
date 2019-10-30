@@ -444,14 +444,22 @@ $col-count: 12;
    ========================================================================== */
 
 #header {
-  margin: 1rem 0;
+  border-bottom: 1px solid #CCC;
+  margin: 1.6rem 0;
   @media (min-width: $break-medium) {
-    margin: 4rem 0;
+    padding: 2.4rem 0;
+    margin: 2.4rem 0;
   }
   .inner {
     justify-content: space-between;
     display: flex;
   }
+}
+
+#footer {
+  margin-top: 4.8rem;
+  border-top: 1px solid #CCC;
+  color: #999;
 }
 
 /* Main nav
@@ -509,6 +517,7 @@ $col-count: 12;
    ========================================================================== */
 
 #branding h1 {
+  margin: 0;
   @media (max-width: $break-medium) {
     font-size: 1.6rem;
     margin: 0.3rem 0 0;
@@ -907,3 +916,13 @@ h2.reset-max-width {
   }
 }
 
+
+/* About page
+   ========================================================================== */
+
+// Similar styles as article.type-post
+.content-inner {
+  padding: 1rem;
+  max-width: 60rem;
+  margin: 0 auto;
+}

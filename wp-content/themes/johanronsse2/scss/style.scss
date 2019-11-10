@@ -1,17 +1,20 @@
 @import "normalize";
-@import "prism";
 
 /* Variables
    ========================================================================== */
 
 // Colors
 
-$standard-color:       #494B53;
+$text-standard-color:  #494B53;
 $accent-color:         #2B5CD1;
-$muted-color:          #6A6C72;
-
+$accent-color-i:       #89A7F0;
+$bg-lightest:          #EEE;
+$bg-lightest-i:        #3D4246;
+$muted-text:           #6C6C6C;
+$muted-text-i:         #7E8D99;
 // Colors with semantic names
 $border-color:         #C1C3C7;
+$border-color-i:       #5B6065;
 
 // Breakpoints
 
@@ -139,11 +142,15 @@ html {
 
 body {
   background: #FFF;
+  @media only screen and (prefers-color-scheme: dark) {
+    background: #292B2D;
+    color: #D7D7D7;
+  }
   line-height: 1.6;
   font-size: 1.5rem;
   -webkit-overflow-scrolling: touch;
 
-  color: $standard-color;
+  color: $text-standard-color;
   @include font-reading;
 
   max-width: 74rem;
@@ -158,6 +165,9 @@ body {
 
 h1, h2, h3, h4 {
   color: #000;
+  @media only screen and (prefers-color-scheme: dark) {
+    color: #FFF;
+  }
 }
 
 h1, h2, h3 {
@@ -191,13 +201,19 @@ p {
 }
 
 blockquote {
-  border-left: .5rem solid #DDD;
+  border-left: .5rem solid $border-color;
+  @media only screen and (prefers-color-scheme: dark) {
+    border-color: $border-color-i;
+  }
   margin-left: 1rem;
   padding-left: 1rem;
 }
 
 strong {
   color: #000;
+  @media only screen and (prefers-color-scheme: dark) {
+    color: #FFF;
+  }
 }
 
 /* Links
@@ -211,12 +227,22 @@ a {
 
 a:link {
   color: $accent-color;
+  @media only screen and (prefers-color-scheme: dark) {
+    color: $accent-color-i;
+  }
   border-bottom: 1px solid mix($accent-color,#FFF,35%);
+  @media only screen and (prefers-color-scheme: dark) {
+    border-bottom: 1px solid rgba($accent-color-i, 0.33);
+  }
 }
 
 a:visited {
   color: mix($accent-color,#F00,65%);
   border-bottom: 1px solid mix(mix($accent-color,#F00,65%),#FFF,35%);
+
+  @media only screen and (prefers-color-scheme: dark) {
+    color: #9270CB;
+  }
 }
 
 a:active,
@@ -224,6 +250,11 @@ a:focus,
 a:hover {
   color: mix($accent-color,#000,80%);
   border-bottom: 1px solid mix($accent-color,#000,80%);
+  @media only screen and (prefers-color-scheme: dark) {
+    color: #D9C2FF;
+    border-bottom: 1px solid rgba(#D9C2FF, 0.33);
+  }
+
 }
 
 /* Bordered list - vertical (links only)
@@ -242,20 +273,29 @@ a:hover {
     a,
     > span {
       border-bottom: 1px solid $border-color;
+      @media only screen and (prefers-color-scheme: dark) {
+        border-color: $border-color-i;
+      }
       padding: 0.5rem 0.75rem;
       display: block;
       > span {
-        color: $muted-color;
+        color: $muted-text;
+        @media only screen and (prefers-color-scheme: dark) {
+          color: $muted-text-i;
+        }
       }
     }
     a {
       text-decoration: none;
       &:hover {
-        background: #EEE;
+        background: $bg-lightest;
         transition: background 0.11s ease-in-out;
       }
       > span {
-        color: $muted-color;
+        color: $muted-text;
+        @media only screen and (prefers-color-scheme: dark) {
+          color: $muted-text-i;
+        }
       }
     }
     &:last-child a {
@@ -267,10 +307,16 @@ a:hover {
 .bordered-list-alt {
   li {
     a {
-      background: #EEE;
+      background: $bg-lightest;
+      @media only screen and (prefers-color-scheme: dark) {
+        background: $bg-lightest-i;
+      }
       padding: 2rem;
       &:hover {
-        background: #DDD;
+        background: darken($bg-lightest, 10%);
+        @media only screen and (prefers-color-scheme: dark) {
+          background: lighten($bg-lightest-i, 5%);
+        }
       }
     }
   }
@@ -286,6 +332,9 @@ a:hover {
   li {
     float: left;
     border-right: 1px solid $border-color;
+    @media only screen and (prefers-color-scheme: dark) {
+      border-right: 1px solid $border-color-i;
+    }
     &:last-child {
       border: none;
     }
@@ -297,7 +346,10 @@ a:hover {
       text-decoration: none;
       border: none;
       &:hover {
-        background: #EEE;
+        background: $bg-lightest;
+        @media only screen and (prefers-color-scheme: dark) {
+          background: $bg-lightest-i;
+        }
       }
     }
   }
@@ -307,7 +359,10 @@ a:hover {
    ========================================================================== */
 
 .box {
-  background: #EEE;
+  background: $bg-lightest;
+  @media only screen and (prefers-color-scheme: dark) {
+    background: $bg-lightest-i;
+  }
   padding: 0.75rem;
   margin: 0 0 0.5rem;
   overflow: hidden;
@@ -331,7 +386,10 @@ a:hover {
     margin: 0;
     list-style: none;
     li {
-      border-top: 1px solid #DDD;
+      border-top: 1px solid $border-color;
+      @media only screen and (prefers-color-scheme: dark) {
+        border-color: $border-color-i;
+      }
       padding: 0.5rem 0 0;
       margin: 0.5rem 0 0;
       &:first-child {
@@ -422,7 +480,10 @@ $col-count: 12;
 
 .year {
   h3 {
-    color: $muted-color;
+    color: $muted-text;
+    @media only screen and (prefers-color-scheme: dark) {
+      color: $muted-text-i;
+    }
     font-size: 1.4rem;
     font-weight: 400;
   }
@@ -444,8 +505,11 @@ $col-count: 12;
    ========================================================================== */
 
 #header {
-  border-bottom: 1px solid #CCC;
-  margin: 1.6rem 0;
+  border-bottom: 1px solid $border-color;
+  @media only screen and (prefers-color-scheme: dark) {
+    border-color: $border-color-i;
+  }
+  margin: 0 0 1.6rem;
   @media (min-width: $break-medium) {
     padding: 2.4rem 0;
     margin: 2.4rem 0;
@@ -458,8 +522,12 @@ $col-count: 12;
 
 #footer {
   margin: 4.8rem 0;
-  border-top: 1px solid #CCC;
-  color: #999;
+  border-top: 1px solid $border-color;
+  color: $muted-text;
+  @media only screen and (prefers-color-scheme: dark) {
+    color: $muted-text-i;
+    border-color: $border-color-i;
+  }
 }
 
 #footer ul {
@@ -467,7 +535,10 @@ $col-count: 12;
 }
 
 #footer a {
-  color: #666;
+  color: lighten($muted-text, 5%);
+  @media only screen and (prefers-color-scheme: dark) {
+    color: lighten($muted-text-i, 5%);
+  }
 }
 
 #footer li {
@@ -504,14 +575,24 @@ $col-count: 12;
     margin: 0;
     padding: 1rem 1.8rem;
   }
-  background: #EEE;
+  color: $text-standard-color;
+  background: $bg-lightest;
+  @media only screen and (prefers-color-scheme: dark) {
+    background: $bg-lightest-i;
+    color: $bg-lightest;
+  }
   text-decoration: none;
   display: block;
   border: none;
-  color: #333;
   &:hover {
     background: #AAA;
     color: #FFF;
+  }
+  @media only screen and (prefers-color-scheme: dark) {
+    &:hover {
+      background: #7E8992;
+      color: $bg-lightest;
+    }
   }
 }
 
@@ -523,6 +604,10 @@ $col-count: 12;
       // Selected state wordpress
       color: #000;
       background: #FFF;
+      @media only screen and (prefers-color-scheme: dark) {
+        background: none;
+        color: $bg-lightest;
+      }
     }
   }
 }
@@ -539,7 +624,10 @@ $col-count: 12;
 }
 
 #branding a {
-  margin: -0.6rem 0 0;
+  margin: 0.8rem 0 0;
+  @media (min-width: $break-medium) {
+    margin: -0.6rem 0 0;
+  }
   padding: 1rem;
   display: block;
   border: none;
@@ -548,7 +636,10 @@ $col-count: 12;
   &:hover,
   &:active,
   &:focus {
-    background: #EEE;
+    background: $bg-lightest;
+    @media only screen and (prefers-color-scheme: dark) {
+      background: $bg-lightest-i;
+    }
   }
 }
 
@@ -573,7 +664,11 @@ article.type-post {
 }
 
 .article-list .article-list-item {
-  border-bottom: .1rem solid #DDD;
+  border-bottom: 0.1rem solid $border-color;
+  @media only screen and (prefers-color-scheme: dark) {
+    border-color: $border-color-i;
+  }
+
   margin: 2.5rem 0;
   padding: 2.5rem 0;
   &:last-child {
@@ -626,14 +721,20 @@ input#searchsubmit {
 #nav-below {
   margin-top: 2rem;
   padding: 1.5em 0.5rem;
-  border-top: .1rem solid #DDD;
+  border-top: .1rem solid $border-color;
+  @media only screen and (prefers-color-scheme: dark) {
+    border-color: $border-color-i;
+  }
   overflow: hidden;
 }
 
 .nav-previous a,
 .nav-next a {
   @media (max-width: $break-medium - 1) {
-    background: #EEE;
+    background: $bg-lightest;
+    @media only screen and (prefers-color-scheme: dark) {
+      background: $bg-lightest-i;
+    }
     padding: .5rem;
     display: inline-block;
     border: none !important;
@@ -751,8 +852,8 @@ article img {
     font-style: normal;
   }
   a {
-    color: $standard-color;
-    border-color: lighten($standard-color, 50%);
+    color: $text-standard-color;
+    border-color: lighten($text-standard-color, 50%);
     &:hover {
       color: mix($accent-color,#000,80%);
       border-bottom: 1px solid mix($accent-color,#000,80%);
@@ -761,13 +862,19 @@ article img {
 }
 
 #comments.comment { // avoid issue with prism where we also have .comment
-  border-bottom: 0.1rem solid #DDD;
+  border-bottom: 0.1rem solid $border-color;
+  @media only screen and (prefers-color-scheme: dark) {
+    border-color: $border-color-i;
+  }
   margin: 0 0 1rem;
   padding: 0 0 0.5rem;
 }
 
 .commentmetadata a {
-  color: #6C6C6C;
+  color: $muted-text;
+  @media only screen and (prefers-color-scheme: dark) {
+    color: $muted-text-i;
+  }
   border: none;
   text-decoration: none;
 }
@@ -781,10 +888,18 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 code {
-  font-size: 80%;
+  font-size: 85%;
   padding: 0.2rem;
   color: #CE2F55;
-  background: #EEE;
+  @media only screen and (prefers-color-scheme: dark) {
+    color: #F08989;
+  }
+
+  background: $bg-lightest;
+  @media only screen and (prefers-color-scheme: dark) {
+    background: $bg-lightest-i;
+  }
+
 }
 
 /* Alignment fix
@@ -805,7 +920,10 @@ h2.align-with-bordered-list {
   border-collapse: collapse;
   td, th {
     padding: 1rem;
-    border: 0.1rem solid #DDD;
+    border: 0.1rem solid $border-color;
+    @media only screen and (prefers-color-scheme: dark) {
+      border-color: $border-color-i;
+    }
   }
   th {
     text-align: left;
@@ -814,7 +932,10 @@ h2.align-with-bordered-list {
 
 hr {
   border: none;
-  border-top: 1px solid #DDD;
+  border-top: 1px solid $border-color;
+  @media only screen and (prefers-color-scheme: dark) {
+    border-color: $border-color-i;
+  }
   margin: 1rem 0;
 }
 
@@ -826,11 +947,17 @@ figure {
 }
 
 figcaption {
-  color: #6C6C6C;
+  color: $muted-text;
+  @media only screen and (prefers-color-scheme: dark) {
+    color: $muted-text-i;
+  }
 }
 
 .wp-caption {
-  background: #F0F0F0;
+  background: $bg-lightest;
+  @media only screen and (prefers-color-scheme: dark) {
+    background: $bg-lightest-i;
+  }
   padding: 1rem;
   margin: 0 auto;
   width: 100% !important;
@@ -871,7 +998,10 @@ figcaption {
 article header p {
   margin: 0;
   margin-top: 0.8rem;
-  color: #6C6C6C;
+  color: $muted-text;
+  @media only screen and (prefers-color-scheme: dark) {
+    color: $muted-text-i;
+  }
 }
 
 article header h1,

@@ -2,6 +2,7 @@
         <div class="inner">
             <ul>
                 <li>©<?php echo date('Y'); ?> Johan Ronsse</li>
+                <li><a href="https://dribbble.com/wolfr_">Portfolio on Dribbble</a></li>
                 <li><a href="https://www.instagram.com/wolfr_/">Instagram</a></li>
                 <li><a href="https://twitter.com/wolfr_2">Twitter</a></li>
             </ul>

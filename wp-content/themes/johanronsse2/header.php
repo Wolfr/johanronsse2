@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/prism-light.css" media="(prefers-color-scheme:no-preference)">
     <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/prism-dark.css" media="(prefers-color-scheme:dark)">
 
+    <link rel="icon" href="<?php bloginfo('template_directory') ?>/favicon-i.ico" type="image/x-icon" id="dark-scheme-icon" />
+    <link rel="icon" href="<?php bloginfo('template_directory') ?>/favicon.ico" type="image/x-icon" id="light-scheme-icon" />
+    <script>
+        matcher = window.matchMedia('(prefers-color-scheme: dark)');
+        matcher.addListener(onUpdate);
+        onFaviconUpdate();
+
+        lightSchemeIcon = document.querySelector('link#light-scheme-icon');
+        darkSchemeIcon = document.querySelector('link#dark-scheme-icon');
+
+        function onFaviconUpdate() {
+          if (matcher.matches) {
+            lightSchemeIcon.remove();
+            document.head.append(darkSchemeIcon);
+          } else {
+            document.head.append(lightSchemeIcon);
+            darkSchemeIcon.remove();
+          }
+        }
+
+    </script>
+
     <script src="<?php bloginfo('template_directory') ?>/js/header-scripts.js"></script>
     <?php wp_head(); ?>
 </head>

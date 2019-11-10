@@ -5,7 +5,11 @@
 
 // Colors
 
-$text-standard-color:  #494B53;
+$text-standard-color:   #494B53;
+$text-standard-color-i: #D7D7D7;
+$text-heading:          #000;
+$text-heading-i:        #FFF;
+
 $accent-color:         #2B5CD1;
 $accent-color-i:       #89A7F0;
 $bg-lightest:          #EEE;
@@ -144,7 +148,7 @@ body {
   background: #FFF;
   @media only screen and (prefers-color-scheme: dark) {
     background: #292B2D;
-    color: #D7D7D7;
+    color: $text-standard-color-i;
   }
   line-height: 1.6;
   font-size: 1.5rem;
@@ -254,7 +258,6 @@ a:hover {
     color: #D9C2FF;
     border-bottom: 1px solid rgba(#D9C2FF, 0.33);
   }
-
 }
 
 /* Bordered list - vertical (links only)
@@ -366,12 +369,15 @@ a:hover {
   padding: 0.75rem;
   margin: 0 0 0.5rem;
   overflow: hidden;
-  .twitter {
+  svg {
     width: 1.6rem;
     top: 0.15rem;
     position: relative;
     margin-left: 0.3rem;
     opacity: 0.5;
+    @media only screen and (prefers-color-scheme: dark) {
+      fill: #FFF;
+    }
   }
   h2 {
     margin: 0;
@@ -682,30 +688,49 @@ article.type-post {
    ========================================================================== */
 
 textarea,
-input[type="text"],
-input[type="submit"] {
+input[type="text"] {
   border-radius: .4rem;
   padding: 0.8rem;
   @include font-reading;
+  color: $text-standard-color;
+  @media only screen and (prefers-color-scheme: dark) {
+    background: #3D4246;
+    color: $text-standard-color-i;
+    border-color: $border-color-i;
+  }
+
 }
 
 textarea,
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-  border: 1px solid #AAA;
+  border: 1px solid $border-color;
+  @media only screen and (prefers-color-scheme: dark) {
+    border-color: $border-color-i;
+  }
   width: 100%;
 }
 
 label {
   display: block;
-  color: #000;
+  color: $text-heading;
   font-weight: 500;
+  @media only screen and (prefers-color-scheme: dark) {
+    color: #FFF;
+  }
 }
 
 input[type="submit"] {
   background: #000;
   color: #FFF;
+  border-radius: .4rem;
+  padding: 0.8rem;
+  @include font-reading;
+  @media only screen and (prefers-color-scheme: dark) {
+    background: #FFF;
+    color: #000;
+  }
   border: none;
   display: inline-block;
   padding: 0.4em 1.2rem;
@@ -854,9 +879,20 @@ article img {
   a {
     color: $text-standard-color;
     border-color: lighten($text-standard-color, 50%);
+    // Blue style when hovering muted link
     &:hover {
       color: mix($accent-color,#000,80%);
       border-bottom: 1px solid mix($accent-color,#000,80%);
+    }
+    @media only screen and (prefers-color-scheme: dark) {
+      color: $text-standard-color-i;
+      border-color: darken($text-standard-color-i, 50%);
+      &:hover {
+        @media only screen and (prefers-color-scheme: dark) {
+          color: #D9C2FF;
+          border-bottom: 1px solid rgba(#D9C2FF, 0.33);
+        }
+      }
     }
   }
 }

@@ -760,7 +760,7 @@ article img {
   }
 }
 
-.comment {
+#comments.comment { // avoid issue with prism where we also have .comment
   border-bottom: 0.1rem solid #DDD;
   margin: 0 0 1rem;
   padding: 0 0 0.5rem;

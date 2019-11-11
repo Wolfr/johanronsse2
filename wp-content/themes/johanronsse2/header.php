@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/style.css?v=1.2">
     <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/prism.css?v=1.2">
+    <meta name="supported-color-schemes" content="light dark">
 
     <link rel="icon" href="<?php bloginfo('template_directory') ?>/favicon-i.ico" type="image/x-icon" id="dark-scheme-icon" />
     <link rel="icon" href="<?php bloginfo('template_directory') ?>/favicon.ico" type="image/x-icon" id="light-scheme-icon" />

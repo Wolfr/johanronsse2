@@ -1,36 +1,5 @@
 @import "normalize";
-
-/* Variables
-   ========================================================================== */
-
-// Colors
-
-$text-standard-color:   #494B53;
-$text-standard-color-i: #D7D7D7;
-$text-heading:          #000;
-$text-heading-i:        #FFF;
-
-$accent-color:         #2B5CD1;
-$accent-color-i:       #89A7F0;
-$bg-lightest:          #EEE;
-$bg-lightest-i:        #3D4246;
-$muted-text:           #6C6C6C;
-$muted-text-i:         #7E8D99;
-// Colors with semantic names
-$border-color:         #C1C3C7;
-$border-color-i:       #5B6065;
-
-// Breakpoints
-
-// Semantic
-$break-nav:            620/16*1rem;
-
-// By size
-$break-small-medium:   480/16*1rem;
-$break-medium:         768/16*1rem;
-$break-large:          1000/16*1rem;
-$break-huge:           1260/16*1rem;
-$break-x-huge:         1600/16*1rem;
+@import "_variables";
 
 /* Base
    ========================================================================== */
@@ -913,29 +882,6 @@ article img {
   }
   border: none;
   text-decoration: none;
-}
-
-/* Code
-   ========================================================================== */
-
-
-code[class*="language-"], pre[class*="language-"] {
-  font-size: 1.3rem;
-}
-
-code {
-  font-size: 85%;
-  padding: 0.2rem;
-  color: #CE2F55;
-  @media only screen and (prefers-color-scheme: dark) {
-    color: #F08989;
-  }
-
-  background: $bg-lightest;
-  @media only screen and (prefers-color-scheme: dark) {
-    background: $bg-lightest-i;
-  }
-
 }
 
 /* Alignment fix

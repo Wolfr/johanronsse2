@@ -296,6 +296,7 @@ https://prismjs.com/download.html#themes=prism-twilight&languages=markup+css+cli
   .style .token.string,
   .token.variable,
   .token.inserted {
+    background: none;
     color: hsl(76, 21%, 52%); /* #8F9D6A */
   }
 

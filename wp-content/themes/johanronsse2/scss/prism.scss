@@ -12,7 +12,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
    ========================================================================== */
 
 code[class*="language-"], pre[class*="language-"] {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 /* Regular code blocks
@@ -38,7 +38,7 @@ pre[class*="language-"] {
   background: none;
 
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 1em;
+  font-size: 1.2rem;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -87,7 +87,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #F5F2F0;
+  background: #EEE;
 }
 
 /* Inline code
@@ -139,7 +139,6 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string {
   color: #9A6E3A;
-  background: hsla(0, 0%, 100%, .5);
 }
 
 .token.atrule,

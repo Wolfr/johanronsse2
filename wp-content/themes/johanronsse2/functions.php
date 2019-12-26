@@ -95,3 +95,30 @@ function remove_width_attribute( $html ) {
    $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
    return $html;
 }
+
+/* Code syntax block
+   ========================================================================== */
+
+add_filter( 'mkaz_code_syntax_language_list', function() {
+    return array(
+        "bash" => "Bash",
+        "css" => "CSS",
+        "html" => "HTML",
+        "javascript" => "JavaScript",
+        "json" => "JSON",
+        "markdown" => "Markdown",
+        "php" => "PHP",
+        "python" => "Python",
+        "jsx" => "React JSX",
+        "sass" => "Sass",
+        "svg" => "SVG",
+        "pug" => "Pug",
+        "xml" => "XML",
+        "yaml" => "YAML",   
+    );
+} );
+
+add_filter( 'mkaz_code_syntax_default_lang', function() { return 'javascript'; });
+add_filter( 'mkaz_prism_css_url', function() {
+    return '/wp-content/themes/johanronsse2/css/prism.css'; 
+});

@@ -8,30 +8,30 @@
 
     <meta name="supported-color-schemes" content="light dark">
 
-    <link rel="icon" href="<?php bloginfo('template_directory') ?>/favicon-i.ico" type="image/x-icon" id="dark-scheme-icon" />
-    <link rel="icon" href="<?php bloginfo('template_directory') ?>/favicon.ico" type="image/x-icon" id="light-scheme-icon" />
+    <link rel="icon" media="(prefers-color-scheme:dark)"  href="<?php bloginfo('template_directory') ?>/favicon-i.ico" type="image/x-icon" id="dark-scheme-icon" />
+    <link rel="icon" media="(prefers-color-scheme:light)" href="<?php bloginfo('template_directory') ?>/favicon.ico" type="image/x-icon" id="light-scheme-icon" />
+
+    <script src="<?php bloginfo('template_directory') ?>/js/header-scripts.js"></script>
 
     <script type="text/javascript">
         matcher = window.matchMedia('(prefers-color-scheme: dark)');
-        matcher.addListener(onUpdate);
+        matcher.addListener(onFaviconUpdate);
         onFaviconUpdate();
 
-        lightSchemeIcon = document.querySelector('link#light-scheme-icon');
-        darkSchemeIcon = document.querySelector('link#dark-scheme-icon');
-
         function onFaviconUpdate() {
+            var lightSchemeIcon = document.querySelector('link#light-scheme-icon');
+            var darkSchemeIcon = document.querySelector('link#dark-scheme-icon');
           if (matcher.matches) {
-            lightSchemeIcon.remove();
-            document.head.append(darkSchemeIcon);
+              document.head.append(darkSchemeIcon);
+              lightSchemeIcon.remove();
           } else {
-            document.head.append(lightSchemeIcon);
-            darkSchemeIcon.remove();
+              document.head.append(lightSchemeIcon);
+              darkSchemeIcon.remove();
           }
         }
 
     </script>
 
-    <script src="<?php bloginfo('template_directory') ?>/js/header-scripts.js"></script>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

@@ -101,6 +101,7 @@ function remove_width_attribute( $html ) {
 
 add_filter( 'mkaz_code_syntax_language_list', function() {
     return array(
+        "apacheconf" => "Apache",
         "bash" => "Bash",
         "css" => "CSS",
         "html" => "HTML",

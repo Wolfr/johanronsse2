@@ -27,9 +27,9 @@
                 </a>
             </li>
             <li>
-                <a href="https://bedrockapp.org">
-                    Bedrock<br>
-                    <span>Bedrock is a powerful static site generator to create advanced HTML prototypes.</span>
+                <a href="https://routify.dev">
+                    Routify<br>
+                    <span>Community + design + documentation for Routify, an open-source, file-based router for Svelte.</span>
                 </a>
             </li>
         </ul>

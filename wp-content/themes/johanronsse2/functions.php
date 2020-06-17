@@ -111,7 +111,6 @@ add_filter( 'mkaz_code_syntax_language_list', function() {
         "json" => "JSON",
         "jsx" => "React JSX",
         "markdown" => "Markdown",
-        "markdown" => "Markdown",
         "php" => "PHP",
         "pug" => "Pug",
         "python" => "Python",

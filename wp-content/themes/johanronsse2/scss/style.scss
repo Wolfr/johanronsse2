@@ -821,35 +821,30 @@ article img {
 #comments-list > ul {
   list-style: none;
   padding: 0;
-  > li > ul.children {
-    margin: 1rem 0;
-    list-style: none;
-    padding-left: 3rem;
-  }
 }
 
-.comment-header {
-  @include clearfix;
+.comment {
+  margin: 0 0 2.4rem;
 }
 
-.comment-header-info {
-  float: left;
-}
+$comment-offset: 4.6rem;
 
-.comment-header-avatar {
-  img {
-    width: 2.6rem;
-    height: 2.6rem;
-    margin-top: 0.2rem;
-    display: block;
-  }
-  margin-right: 0.75rem;
-  float: left;
+.comment-meta {
+  padding-left: $comment-offset;
 }
 
 .comment-author {
+  position: relative;
+  padding-left: $comment-offset;
   cite {
     font-style: normal;
+  }
+  .avatar {
+    width: 3.6rem;
+    height: 3.6rem;
+    position: absolute;
+    left: 0;
+    top: 0.4rem;
   }
   a {
     color: $text-standard-color;
@@ -881,7 +876,7 @@ article img {
   padding: 0 0 0.5rem;
 }
 
-.commentmetadata a {
+.comment-meta a {
   color: $muted-text;
   @media (prefers-color-scheme: dark) {
     color: $muted-text-i;
@@ -1057,4 +1052,12 @@ h2.reset-max-width {
   padding: 1rem;
   max-width: 60rem;
   margin: 0 auto;
+}
+
+.comment-awaiting-moderation {
+  display: block;
+  padding: 1.4rem;
+  margin-top: 1.2rem;
+  font-style: normal;
+  background: #FFA;
 }

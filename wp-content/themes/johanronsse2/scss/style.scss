@@ -1038,7 +1038,7 @@ h2.reset-max-width {
 
 // Specific to instagram embeds
 
-@media (max-width: 1000px) {
+@media (max-width: $break-large) {
   .wp-block-embed-instagram.wp-block-embed.is-type-rich.is-provider-instagram {
     max-width: 100%;
     .wp-block-embed__wrapper {

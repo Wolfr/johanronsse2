@@ -12,7 +12,7 @@
         <p>Hi, I'm Johan!</p>
         <p>I am a user interface designer living in Belgium. I run a design company called <a href="https://mono.company/">Mono</a>, which I founded with my business partner <a href="http://xavierbertels.com">Xavier</a>.</p>
         <p>I believe the way we interact with computers can be improved vastly. We are approaching a future with screens everywhere. I want to work on keeping that world human.</p>
-        <p>Besides <a href="/blog">blogging</a> on this this website, sometimes I <a href="http://twitter.com/wolfr_2">tweet</a>.</p>
+        <p>Besides <a href="/blog">blogging</a> on this website, sometimes I <a href="http://twitter.com/wolfr_2">tweet</a>.</p>
         
     </div>
 

@@ -3,8 +3,8 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/style.css?v=1.2">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/prism.css?v=1.2">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/style.css?v=1.3">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/prism.css?v=1.3">
 
     <meta name="supported-color-schemes" content="light dark">
 

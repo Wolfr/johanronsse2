@@ -27,9 +27,9 @@
                 </a>
             </li>
             <li>
-                <a href="https://routify.dev">
-                    Routify<br>
-                    <span>Community + design + documentation for Routify, an open-source, file-based router for Svelte.</span>
+                <a href="https://github.com/Wolfr/sveltekit-jui">
+                    SvelteKit-JUI<br>
+                    <span>User interface library powered by Svelte</span>
                 </a>
             </li>
         </ul>
